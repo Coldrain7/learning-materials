@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main ()
+{
+int x;
+	scanf("%d",&x);
+	float amount=x*(1+0.033)*(1+0.033)*(1+0.033);//定义时用float因为结果为小数 ,换成double测试时计算结果无差别 
+	printf("%f",amount);
+	return 0;
+  }
