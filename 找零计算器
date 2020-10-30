@@ -1,0 +1,12 @@
+double money;
+	double price;
+	printf("请输入金额：（元）\n");
+	scanf("%lf",&price);
+	printf("请输入票面：（元）\n");
+	scanf("%lf",&money);
+	double a=price-money;
+	if (a>0){
+		printf("余额不足以支付。\n");
+	}
+	if(a<=0){
+		printf("找零%f元。",money-price);
