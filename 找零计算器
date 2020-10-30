@@ -7,6 +7,5 @@ double money;
 	double a=price-money;
 	if (a>0){
 		printf("余额不足以支付。\n");
-	}
-	if(a<=0){
+	}else{
 		printf("找零%f元。",money-price);
