@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() 
+{
+  srand(time(0));
+  int b=rand();	
+  b%=100+1;
+  int a,n;
+  n=0;
+  do{
+  	n++;
+  	printf("请输入数字：");
+  	scanf("%d",&a);
+  	if(a>b){
+  		printf("高了\n"); 
+  	}else if(a<b){
+  		printf("低了\n"); 
+  	}
+  }while(a!=b);
+  printf("恭喜你猜对啦！一共猜了%d次",n); 
+  
+   
+	return 0;
+} 
