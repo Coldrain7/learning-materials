@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+	double x,y;
+	printf("Enter a number:");
+	scanf("%lf",&y);
+	for(;y<0;){
+		printf("Please enter again:");
+		scanf("%lf",&y);
+	}
+	for(;y>0;){
+		printf("Enter a number:");
+		scanf("%lf",&x);
+		if(x>y){
+			y=x; 
+		}else if(x<=0)
+		break;
+	}
+	printf("The largest number is:%f",y);
+	return 0;
+} 
