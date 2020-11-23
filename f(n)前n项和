@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+	int n,i;
+	double sum=0;
+	int a=1;
+	printf("请输入n：");
+	scanf("%d",&n); 
+	for(i=1;i<=n;i++){
+		sum=sum+a*1.0/i;
+		a=-a;
+	}
+	printf("f(%d)=%f",n,sum);
+	return 0;
+}
