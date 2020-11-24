@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int i=0;
+    int n=0;
+	char province[40][3]={"京","沪","津","鲁","冀","晋","蒙","辽","吉","黑",
+				   	"苏","浙","皖","闽","赣","豫","湘","鄂","粤","桂",
+					"琼","川","贵","云","藏","陕","甘","青","宁","新",
+					"港","澳","台","挂","警","学","使","领"} ;
+    char utf[40][16]={ "E4BAAC","E6B2AA","E6B4A5","E9B281","E58680","E6998B","E89299","E8BEBD","E59089","E9BB91",
+                    "E88B8F","E6B599","E79A96","E997BD","E8B5A3","E8B1AB","E6B998","E98482","E7B2A4","E6A182",
+                     "E790BC","E5B79D","E8B4B5","E4BA91","E8978F","E99995","E79498","E99D92","E5AE81","E696B0",
+                     "E6B8AF","E6BEB3","E58FB0","E68C82","E8ADA6","E5ADA6","E4BDBF","E9A286" };
+    char number[40]={0};
+    char code[40][10]={0};
+    scanf("%s",number);
+    for (i=0;i<20;i++){
+        if(number[i]<0)
+        {code[n][0]=number[i];
+            code[n][1]=number[i+1];
+            i++;
+            n++;
+        }else{
+            code[n][0]= number[i];
+            n++;
+        }
+    }
+    for(n=0;n<10;n++){
+        for(i=0;i<=40;i++){
+            if (strcmp(code[n], province[i])==0){
+                printf(" %s ",utf[i]);
+                break;
+            }if (i==39){
+            printf("%s",code[n]);
+            }
+        }
+    }
+    return 0;
+}
