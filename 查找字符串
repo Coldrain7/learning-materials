@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+	int i,n,a;
+    char str[101];
+    scanf("%d",&n);
+    for(a=0;a<n;a++){
+    scanf("%s",str);
+    for(i=0;i<n;i++){
+    	if(str[i]=='A'&&str[i+1]=='S'&&str[i+2]=='C'&&str[i+3]=='U'&&str[i+4]=='A'){
+    		printf("YES\n");
+    		break;
+    	}else if(str[i]=='S'&&str[i+1]=='C'&&str[i+2]=='U'){
+    		printf("YES\n");
+    		break;
+    	}else {
+    		printf("NO\n");
+    		break;
+    	}
+    }
+}
+
+	return 0;
+}
