@@ -1,0 +1,17 @@
+#include <stdio.h>
+int fab(int a,int n,int k){
+	if(n==1)
+	return a;
+	else return fab(a+k,n-1,k);
+}
+int main()
+{
+	int a,n,k;
+	scanf("%d %d %d",&n,&a,&k);
+	if(n>=2){
+		printf("%d",fab(a,n,k));
+	}else printf("Wrong Number");
+
+	
+	return 0;
+}
