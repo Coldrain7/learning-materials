@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+	int m,n,i,o;
+	int a,b,c;
+	int result=0;
+	int k,j;
+	scanf("%d",&j);
+	for(k=0;k<j;k++) {
+	
+	scanf("%d %d",&m,&n);
+    if(m>=100&&m<=n&&n<=999){
+    	for(i=m;i<n;i++){
+    		o=i;
+    		c=o%10;
+    		c=c*c*c;
+    		o=o/10;
+    		b=o%10;
+    		b=b*b*b;
+    		a=o/10;
+    		a=a*a*a;
+    		if((a+b+c)==i){
+    			printf("%d ",i);
+    			result=1;
+    		}
+    	}
+    }
+    if(result==0){
+    	printf("-1\n");
+    }
+	}
+	return 0;
+}
