@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+int main(){ 
+	char ch[100];
+	int i,q,p,j,a,b;
+        p=0;
+        a=0;
+	while( (b=getchar())!='\n' ){
+		ch[a]=b;
+		a++;
+	}
+	int l=strlen(ch);
+	for( i=0;i<l;i++){
+		while( ch[i]>=65 && ch[i]<=122 ){                    
+			q=i;
+			while( ch[q+p]>=65 && ch[q+p]<=122 ){
+				p++;
+			}
+			for( j=q+p-1; j>q-1; j--){
+				printf("%c",ch[j]);
+			}
+			i=q+p;
+			p=0;
+		}
+		if( ch[i]<65 || ch[i]>122 ){
+			printf("%c",ch[i]);
+		}
+	}	
+	return 0;
+}
