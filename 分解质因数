@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+	int n,i,x,k;
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%d",&x);
+		if(x>=2&&x<=10000){
+		for(k=2;k<=x;k++){
+			   while(x%k==0){
+			   	x=x/k;
+			   	if(x==1){
+			   		printf("%d\n",k);
+			   	}else {
+			   		printf("%d*",k);
+			   	}
+			   }
+			}
+		}
+	}
+
+	return 0;
+}
