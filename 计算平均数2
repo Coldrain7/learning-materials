@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	int n,i,k=0,sum=0;
+	double avg;
+	scanf("%d",&n);
+	char a[100][30];
+	if(n>=1&&n<=100){
+    	for(i=0;i<n;i++)
+    	{
+    		scanf("%s",a[i]);
+    	}
+    	for(i=0;i<n;i++){
+    	if(a[i][0]=='n'){
+    		k++;
+    	}else if(a[i][0]>='0'&&a[i][0]<='9'){
+    		sum=sum+a[i][0];
+    	}
+    	}
+    	avg=sum*1.0/(n-k)-48;
+    	if(k==n){
+    		printf("n/a\n");
+    	}else {
+    		printf("%.2f\n",avg);
+    	}
+    	
+	}
+	return 0;
+}  
