@@ -1,0 +1,35 @@
+/**
+字符串 S 由小写字母组成。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。返回一个表示每个字符串片段的长度的列表。
+输入：S = "ababcbacadefegdehijhklij"
+输出：[9,7,8]
+解释：
+划分结果为 "ababcbaca", "defegde", "hijhklij"。
+每个字母最多出现在一个片段中。
+像 "ababcbacadefegde", "hijhklij" 的划分是错误的，因为划分的片段数较少。
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* partitionLabels(char * S, int* returnSize){
+    int i,j=0;
+    int len = strlen(S);
+    int cnt[26];
+    for(i=0;i<len;i++){
+        cnt[S[i]-'a'] = i;//统计某个字符最后出现的位置。
+    }
+    int *res = (int*)malloc(len*sizeof(int));
+    int start=0;
+    int end = 0;
+    for(i=0;i<len;i++){
+        end = fmax(end,cnt[S[i]-'a']);
+        if(i==end){
+            res[j++] = end-start+1;
+            start = end+1;
+        }
+    }
+    *returnSize = j;
+    return res;
+}
+
+作者：yang-kang-v
+链接：https://leetcode-cn.com/problems/partition-labels/solution/cyu-yan-by-yang-kang-v-446l/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
