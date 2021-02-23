@@ -1,0 +1,28 @@
+#include <stdio.h>
+int a[10];
+int sunofunique(int* nums,int numSize){
+	int sum=0;
+	int i,j;
+	for(i=0;i<numSize;i++){
+		for(j=0;j<10;j++){
+			if(nums[i]==j){
+				a[j]++;
+				break;
+			}
+		}
+	}
+	for(i=0;i<numSize;i++){
+		if(a[i]==1){
+			sum=sum+i;
+		}
+	}
+	return sum;
+}
+int main()
+{
+  int n[4]={1,2,3,2};
+  int q;
+  q=sunofunique(n,4);
+  printf("%d",q);
+  return 0;
+}
